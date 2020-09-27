@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="600">
+    
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="MinWidth" Value="30px" />
+            <Setter Property="FontSize" Value="16px" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid Margin="20px">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="10px" />
+            <RowDefinition />
+            <RowDefinition Height="10px" />
+            <RowDefinition />
+            <RowDefinition Height="10px" />
+            <RowDefinition />
+            <RowDefinition Height="10px" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10px" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10px" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10px" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
+        <TextBlock x:Name="textblockContent" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="9" HorizontalAlignment="Center" Text="0" />
+
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumOne" Grid.Row="2" Grid.Column="0" Content="1" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumTwo" Grid.Row="2" Grid.Column="2" Content="2" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumThree" Grid.Row="2" Grid.Column="4" Content="3" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumFour" Grid.Row="4" Grid.Column="0" Content="4" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumFive" Grid.Row="4" Grid.Column="2" Content="5" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumSix" Grid.Row="4" Grid.Column="4" Content="6" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumSeven" Grid.Row="6" Grid.Column="0" Content="7" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumEight" Grid.Row="6" Grid.Column="2" Content="8" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumNine" Grid.Row="6" Grid.Column="4" Content="9" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnNumZero" Grid.Row="8" Grid.Column="2" Content="0" />
+
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnOpPlus" Grid.Row="2" Grid.Column="6" Content="+" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnOpMinus" Grid.Row="4" Grid.Column="6" Content="-" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnOpMulti" Grid.Row="6" Grid.Column="6" Content="*" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnOpDivi" Grid.Row="8" Grid.Column="6" Content="/" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnOpRes" Grid.Row="2" Grid.Column="8" Grid.RowSpan="5" Content="=" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnOpClear" Grid.Row="8" Grid.Column="8" Content="C" />
     </Grid>
 </Window>
